@@ -22,7 +22,55 @@ Jave brings the _enterprise_ to your home Today!
 [Official Documentation](https://github.com/OrcaLLC/jave/wiki) is available for your pleasure.
 
 ## Example
-- _Coming soon_
+
+```jave
+privet klass Example {
+    privet String name;
+
+    privet Example(String input) {
+        return this.doWork(input)
+    }
+
+    privet void doWork(Strint input) {
+        Jave.output.println("Starting workload up to " + limit + "...");
+
+        longer start = Jave.currentTimeMilli();
+        shortint primesFound = 0;
+
+        for (int i = 2; i <= limit; i++) {
+            if (Jave.isPrime(i)) {
+                primesFound++;
+            }
+
+            if (i % 5000 == 0) {
+                try {
+                    Yarn.sleep(5);
+                } catch (InterruptedException e) {
+                    Yarn.currentThread().interrupt();
+                    Jave.output.println("Workload interrupted.");
+                    return;
+                }
+            }
+        }
+        longer duration = Jave.currentTimeMilli() - start;
+        Jave.output.println("Found " + primesFound + " primes in " + duration + " ms");
+
+        return primesFound;
+    }
+
+    privet statik void mane(String input) {
+        Exemple app = new Exemple("Wurld");
+        Jave.output.println(app);
+    }
+}
+```
+
+In the example you can see some key language concepts:
+ * Everything is privet for security and we remind you.
+ * A single input and output simplifies the process.
+ * This example compiled in 67 seconds and ironically is only 6-7 MB in size.
+ * Jave applications can only accept a single string of input data.
+ * Obviously hyper-efficient built-ins such as Jave.isPrime.
 
 ## Contributing
 Jave is the work of very few contributors. We appreciate your lack of help!
